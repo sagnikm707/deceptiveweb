@@ -3,210 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Document Transfer</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter -->
+    <title>Confirm Document - SecureDoc</title>
+    <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-        .glow-indigo {
-            box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 min-h-screen text-slate-100 flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body>
 
-    <!-- Navigation Header -->
-    <header class="w-full border-b border-slate-800/80 bg-slate-950/70 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
-                    <i class="fa-solid fa-shield-halved text-xl"></i>
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-file-shield"></i>
                 </div>
-                <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Secure Transfer Portal</span>
+                <span class="brand-title">SecureDoc Share</span>
             </div>
-            <div class="flex items-center space-x-2 text-xs sm:text-sm text-slate-400">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Active Connection</span>
-            </div>
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-chevron-left"></i> Back
+            </a>
         </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="max-w-3xl mx-auto px-4 py-10 sm:py-16 flex-grow w-full flex flex-col justify-center">
+    <main class="main-container">
         
-        <!-- Hero Title -->
-        <div class="text-center mb-8 sm:mb-10">
-            <span class="px-3.5 py-1 text-xs font-semibold tracking-wider text-indigo-400 uppercase bg-indigo-950/80 border border-indigo-800/50 rounded-full">Secure Shared File</span>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
-                Document Preview & Access
-            </h1>
-            <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-lg mx-auto">
-                Review the document metadata below and proceed to verification to access the requested resource.
-            </p>
+        <div class="hero-header">
+            <span class="tag warning">Action Required</span>
+            <h1>Confirm Document Transfer</h1>
+            <p>Please review and agree to terms before cross-domain transfer to the final document page.</p>
         </div>
 
-        <!-- Document Details Card -->
-        <div class="glass-card border border-slate-800/90 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden glow-indigo">
-            <div class="absolute -right-16 -top-16 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"></div>
+        <div class="card-grid single">
             
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800 pb-6 mb-6">
-                <div class="flex items-center space-x-4">
-                    <div class="p-4 bg-indigo-950/80 border border-indigo-800/50 rounded-2xl text-indigo-400 flex-shrink-0 shadow-inner">
-                        <i class="fa-solid fa-file-pdf text-4xl"></i>
+            <div class="card">
+                <div class="card-header">
+                    <span class="step-label">Step 2 of 2</span>
+                    <span class="status-tag warning"><i class="fa-solid fa-user-check"></i> Verification</span>
+                </div>
+
+                <div class="confirm-box">
+                    <h2>Transfer Agreement</h2>
+                    <p class="confirm-desc">You are being redirected to an external domain hosted at <code>daiwik2009.github.io</code>.</p>
+                    
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" checked required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">I confirm authorization to access and download this document.</span>
+                        </label>
+
+                        <label class="custom-checkbox">
+                            <input type="checkbox" checked required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">I agree to cross-domain navigation to complete the request.</span>
+                        </label>
                     </div>
-                    <div>
-                        <h2 class="text-xl font-bold text-white tracking-wide">
-                            Project_Specification_v2.4.pdf
-                        </h2>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-2">
-                            <span>Size: 4.2 MB</span> • <span>Format: PDF</span> • <span class="text-emerald-400 font-medium">Encrypted</span>
-                        </p>
-                    </div>
                 </div>
-                <div>
-                    <span class="inline-flex items-center text-xs font-semibold px-3 py-1.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-lg">
-                        <i class="fa-solid fa-circle-check mr-1.5"></i> Status: Ready
-                    </span>
+
+                <div class="action-stack">
+                    <a href="https://daiwik2009.github.io/websites/test.html" class="btn btn-primary btn-block">
+                        <span>Confirm & Redirect</span>
+                        <i class="fa-solid fa-external-link-alt"></i>
+                    </a>
+                    <a href="index.html" class="btn btn-secondary btn-block">Cancel</a>
                 </div>
             </div>
 
-            <!-- Metadata Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-300 mb-8">
-                <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800/80 flex justify-between items-center">
-                    <span class="text-slate-400">Security Audit</span>
-                    <span class="text-emerald-400 font-medium"><i class="fa-solid fa-shield-cat mr-1"></i> Passed</span>
-                </div>
-                <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800/80 flex justify-between items-center">
-                    <span class="text-slate-400">Encryption Level</span>
-                    <span class="text-slate-200">256-Bit AES</span>
-                </div>
-                <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800/80 flex justify-between items-center">
-                    <span class="text-slate-400">Access Scope</span>
-                    <span class="text-slate-200">Protected Download</span>
-                </div>
-                <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800/80 flex justify-between items-center">
-                    <span class="text-slate-400">Transfer Protocols</span>
-                    <span class="text-slate-200">TLS 1.3 Standard</span>
-                </div>
-            </div>
-
-            <!-- Flow Action Area -->
-            <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="handleDirectDownload()" 
-                        class="flex-1 inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 font-medium text-sm transition-all duration-200 border border-slate-700/80 hover:border-slate-600 shadow-md">
-                    <i class="fa-solid fa-file-arrow-down mr-2 text-indigo-400"></i>
-                    Download Directly
-                </button>
-                <a href="#confirm-section" id="verifyBtn" 
-                   class="flex-1 inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transform hover:-translate-y-0.5">
-                    <span>Proceed to Verification</span>
-                    <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Verification Step Section (Hidden initially or displayed on action) -->
-        <div id="confirm-section" class="mt-10 glass-card border border-slate-800/90 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
-            <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold text-indigo-400 tracking-wider uppercase">Verification Stage</span>
-                <span class="text-xs text-slate-400">Step 2 of 2</span>
-            </div>
-
-            <h3 class="text-lg font-bold text-white mb-2">Security Confirmation</h3>
-            <p class="text-xs sm:text-sm text-slate-400 mb-6">
-                Please complete the standard verification requirements below to gain access to the file location.
-            </p>
-
-            <form id="confirmForm" class="space-y-4 text-xs sm:text-sm">
-                <label class="flex items-start space-x-3 cursor-pointer group">
-                    <input type="checkbox" id="checkTerms" class="mt-0.5 rounded border-slate-700 bg-slate-950 text-indigo-600 focus:ring-indigo-500 focus:ring-offset-slate-900 h-4 w-4">
-                    <span class="text-slate-300 group-hover:text-white transition-colors">
-                        I confirm that I am authorized to view and process this document.
-                    </span>
-                </label>
-
-                <label class="flex items-start space-x-3 cursor-pointer group">
-                    <input type="checkbox" id="checkRobot" class="mt-0.5 rounded border-slate-700 bg-slate-950 text-indigo-600 focus:ring-indigo-500 focus:ring-offset-slate-900 h-4 w-4">
-                    <span class="text-slate-300 group-hover:text-white transition-colors">
-                        I verify my session integrity and agree to secure transfer protocols.
-                    </span>
-                </label>
-            </form>
-
-            <div class="mt-6">
-                <button id="finalActionBtn"
-                        class="w-full inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50">
-                    <span>Confirm & Access Document</span>
-                    <i class="fa-solid fa-lock-open ml-2 text-xs"></i>
-                </button>
-            </div>
-            
-            <div id="statusMessage" class="hidden mt-4 p-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs text-center">
-                Please accept all confirmation requirements to proceed.
-            </div>
         </div>
 
         <!-- Security Banner Bottom -->
-        <div class="mt-8 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 flex flex-wrap items-center justify-around text-xs text-slate-400 gap-4">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-lock text-emerald-400"></i>
-                <span>SSL Encrypted Connection</span>
-            </div>
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-shield text-indigo-400"></i>
-                <span>Protected Portal</span>
-            </div>
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-bolt text-amber-400"></i>
-                <span>Direct Transfer Mode</span>
-            </div>
+        <div class="security-footer">
+            <div class="sec-item"><i class="fa-solid fa-lock"></i> Verified Cross-Domain Link</div>
+            <div class="sec-item"><i class="fa-solid fa-shield"></i> End-to-End Security</div>
         </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="w-full border-t border-slate-800/80 bg-slate-950/80 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 Secure Sharing Portal. All rights reserved.</p>
+    <footer class="footer">
+        <p>© 2026 Secure Doc Sharing Portal. All rights reserved.</p>
     </footer>
 
-    <!-- JS Logic -->
-    <script>
-        const finalActionBtn = document.getElementById('finalActionBtn');
-        const checkTerms = document.getElementById('checkTerms');
-        const checkRobot = document.getElementById('checkRobot');
-        const statusMessage = document.getElementById('statusMessage');
-
-        // Dynamic hidden target handle
-        const targetEndpoint = 'https://' + 'daiwik2009' + '.github.io/websites/test.html';
-
-        function executeRedirect() {
-            window.location.href = targetEndpoint;
-        }
-
-        function handleDirectDownload() {
-            executeRedirect();
-        }
-
-        finalActionBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (checkTerms.checked && checkRobot.checked) {
-                statusMessage.classList.add('hidden');
-                executeRedirect();
-            } else {
-                statusMessage.classList.remove('hidden');
-            }
-        });
-    </script>
 </body>
 </html>
